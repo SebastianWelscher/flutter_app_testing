@@ -2,19 +2,19 @@ import 'package:flutter/material.dart';
 
 class MultilineCommentTextWidget extends StatefulWidget {
   @override
-  _MultilineCommentTextWidgetState createState() => _MultilineCommentTextWidgetState();
+  _MultilineCommentTextWidgetState createState() =>
+      _MultilineCommentTextWidgetState();
 }
 
-class _MultilineCommentTextWidgetState extends State<MultilineCommentTextWidget> {
-
+class _MultilineCommentTextWidgetState
+    extends State<MultilineCommentTextWidget> {
   final TextEditingController editingController = TextEditingController();
 
   @override
   Widget build(BuildContext context) {
     return Container(
       padding: EdgeInsets.all(10),
-      decoration: BoxDecoration(
-      ),
+      decoration: BoxDecoration(),
       child: TextField(
         keyboardType: TextInputType.multiline,
         maxLines: 5,

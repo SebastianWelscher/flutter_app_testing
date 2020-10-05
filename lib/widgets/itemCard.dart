@@ -1,7 +1,6 @@
 import 'package:flutter_app_testing/imports/imports.dart';
 
 class ItemCard extends StatelessWidget {
-
   Function onTap;
   final String title;
   final double elevation;
@@ -11,11 +10,15 @@ class ItemCard extends StatelessWidget {
   Color titleColor = Colors.blue;
 
   ItemCard(
-      {@required this.title, @required this.image, @required this.heroTag, @required this.onTap, this.elevation, this.titleColor});
+      {@required this.title,
+      @required this.image,
+      @required this.heroTag,
+      @required this.onTap,
+      this.elevation,
+      this.titleColor});
 
   @override
   Widget build(BuildContext context) {
-
     var widht = MediaQuery.of(context).size.width;
     var height = MediaQuery.of(context).size.height;
 
@@ -26,8 +29,8 @@ class ItemCard extends StatelessWidget {
         child: Padding(
           padding: const EdgeInsets.all(8.0),
           child: Container(
-            width: widht*0.95,
-            height: height*0.2,
+            width: widht * 0.95,
+            height: height * 0.2,
             child: Card(
               shape: RoundedRectangleBorder(
                 borderRadius: BorderRadius.all(Radius.circular(radius)),
@@ -39,16 +42,14 @@ class ItemCard extends StatelessWidget {
                     decoration: BoxDecoration(
                         borderRadius: BorderRadius.all(Radius.circular(radius)),
                         image: DecorationImage(
-                          image: AssetImage(
-                              image),
+                          image: AssetImage(image),
                           fit: BoxFit.cover,
-                        )
-                    ),
+                        )),
                   ),
                   Positioned(
                     child: Container(
-                      height:height*0.05,
-                      width: widht*0.3,
+                      height: height * 0.05,
+                      width: widht * 0.3,
                       decoration: BoxDecoration(
                         borderRadius: BorderRadius.only(
                           topLeft: Radius.circular(radius),
@@ -57,12 +58,13 @@ class ItemCard extends StatelessWidget {
                         color: titleColor,
                       ),
                       child: Center(
-                        child: Text(title,
+                        child: Text(
+                          title,
                           style: GoogleFonts.dancingScript(
                               color: Colors.white,
                               fontSize: 20,
-                              fontWeight: FontWeight.bold
-                          ),),
+                              fontWeight: FontWeight.bold),
+                        ),
                       ),
                     ),
                   ),

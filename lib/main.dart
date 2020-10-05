@@ -3,8 +3,7 @@ import 'imports/imports.dart';
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
   SystemChrome.setPreferredOrientations(
-      [DeviceOrientation.portraitUp,
-        DeviceOrientation.portraitUp]);
+      [DeviceOrientation.portraitUp, DeviceOrientation.portraitUp]);
   await Hive.initFlutter();
   //Hive.registerAdapter(ContactAdapter());
   await Hive.openBox('settings');
@@ -22,9 +21,10 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     final themeNotifier = Provider.of<ThemeNotifier>(context);
     return Listener(
-      onPointerDown: (_){
+      onPointerDown: (_) {
         FocusScopeNode currentFocus = FocusScope.of(context);
-        if(!currentFocus.hasPrimaryFocus && currentFocus.focusedChild != null){
+        if (!currentFocus.hasPrimaryFocus &&
+            currentFocus.focusedChild != null) {
           currentFocus.focusedChild.unfocus();
         }
       },

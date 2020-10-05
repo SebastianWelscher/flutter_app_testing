@@ -6,8 +6,7 @@ class FullScreenTest extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-
-  SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
+    SystemChrome.setEnabledSystemUIOverlays([SystemUiOverlay.top]);
 
     return AnnotatedRegion<SystemUiOverlayStyle>(
       value: SystemUiOverlayStyle(

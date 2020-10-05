@@ -19,15 +19,19 @@ class _SettingsPageState extends State<SettingsPage> {
         backgroundColor: Theme.of(context).primaryColor,
         elevation: 0,
         centerTitle: true,
-        title: Text('Settings',
-        style: GoogleFonts.oswald(
-          fontSize: 25,
-          color: Theme.of(context).accentColor,
-        ),),
+        title: Text(
+          'Settings',
+          style: GoogleFonts.oswald(
+            fontSize: 25,
+            color: Theme.of(context).accentColor,
+          ),
+        ),
         leading: IconButton(
-          icon: Icon(Icons.arrow_back_ios,
-          color: Theme.of(context).accentColor,),
-          onPressed: ()=> Navigator.of(context).pop(),
+          icon: Icon(
+            Icons.arrow_back_ios,
+            color: Theme.of(context).accentColor,
+          ),
+          onPressed: () => Navigator.of(context).pop(),
         ),
       ),
       body: ListView(
@@ -35,20 +39,21 @@ class _SettingsPageState extends State<SettingsPage> {
           SwitchListTile(
               title: Text('Tag Nacht Modus'),
               value: _darkTheme,
-              onChanged:(val){
+              onChanged: (val) {
                 setState(() {
                   _darkTheme = val;
                 });
-                onThemeChanged(val, themeNotifier,box);
-              }
-          ),
+                onThemeChanged(val, themeNotifier, box);
+              }),
           ListTile(
             title: Text('Painter'),
-            onTap: ()=>Navigator.push(context, BouncyPageRoute(widget: PainterPage())),
+            onTap: () =>
+                Navigator.push(context, BouncyPageRoute(widget: PainterPage())),
           ),
           ListTile(
             title: Text('Fullscreen'),
-            onTap: ()=>Navigator.push(context, BouncyPageRoute(widget: FullScreenTest())),
+            onTap: () => Navigator.push(
+                context, BouncyPageRoute(widget: FullScreenTest())),
           ),
         ],
       ),
@@ -57,7 +62,6 @@ class _SettingsPageState extends State<SettingsPage> {
 }
 
 void onThemeChanged(bool value, ThemeNotifier themeNotifier, Box box) async {
-
   (value)
       ? themeNotifier.setTheme(darkTheme)
       : themeNotifier.setTheme(lightTheme);
