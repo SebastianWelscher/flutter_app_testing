@@ -56,7 +56,7 @@ class _SettingsPageState extends State<SettingsPage> {
                 context, BouncyPageRoute(widget: FullScreenTest())),
           ),
           ListTile(
-            title: Text('Fullscreen'),
+            title: Text('Animated Status'),
             onTap: () => Navigator.push(
                 context, BouncyPageRoute(widget: AnimatedCirclePage())),
           ),
